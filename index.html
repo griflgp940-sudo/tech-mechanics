@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Суворий захист, який забороняє браузеру перекладати та ламати адреси посилань -->
     <meta name="google" content="notranslate">
     <title>Технічна механіка — Навчальний вебсайт</title>
     <style>
@@ -27,6 +28,7 @@
             line-height: 1.6;
         }
 
+        /* Навігація */
         header {
             background-color: var(--primary);
             color: var(--white);
@@ -68,6 +70,7 @@
             color: #93c5fd;
         }
 
+        /* Контент */
         main {
             max-width: 1200px;
             margin: 2rem auto;
@@ -98,9 +101,10 @@
             margin: 1.5rem 0 1rem;
         }
 
+        /* Картки лекцій */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 1.5rem;
         }
@@ -115,16 +119,7 @@
             justify-content: space-between;
         }
 
-        .lesson-list {
-            margin: 1rem 0;
-            padding-left: 1.2rem;
-            font-size: 0.95rem;
-        }
-
-        .lesson-list li {
-            margin-bottom: 0.5rem;
-        }
-
+        /* Надійна пряма кнопка-посилання */
         .btn {
             display: inline-block;
             background: var(--primary);
@@ -142,6 +137,7 @@
             background: var(--secondary);
         }
 
+        /* Адаптивність */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -178,7 +174,7 @@
         <div id="home" class="page active">
             <h1>Про дисципліну «Технічна механіка»</h1>
             <p>Вітаємо на навчальному порталі дисципліни! Технічна механіка є базовою інженерною наукою, що вивчає закони руху і рівноваги матеріальних тіл, а також деформації елементів конструкцій під дією зовнішніх сил.</p>
-            <h2>Основные розділи курсу:</h2>
+            <h2>Основні розділи курсу:</h2>
             <ul>
                 <li>Теоретична механіка (Статика, Кінематика, Динаміка)</li>
                 <li>Опір матеріалів (Опір деформаціям та руйнуванню)</li>
@@ -195,46 +191,23 @@
         <!-- ЛЕКЦІЇ -->
         <div id="lectures" class="page">
             <h1>Конспекти лекцій</h1>
-            <p>Матеріали лекцій розподілено на три логічні частини. Ознайомтеся з темами та натисніть кнопку для відкриття повного конспекту:</p>
+            <p>Матеріали лекцій розподілено на три логічні частини відповідно до структури дисципліни:</p>
             
             <div class="grid">
-                <!-- ЧАСТИНА 1 -->
                 <div class="card">
                     <h3>Частина 1: Теоретична механіка</h3>
-                    <ul class="lesson-list">
-                        <li><strong>Тема 1:</strong> Поняття та аксіоми статики. Збіжні сили.</li>
-                        <li><strong>Тема 2:</strong> Момент сили. Пара сил.</li>
-                        <li><strong>Тема 3:</strong> Плоска та просторова системи сил. Рівновага.</li>
-                        <li><strong>Тема 4:</strong> Центр ваги тіла.</li>
-                        <li><strong>Тема 5:</strong> Кінематика точки та твердого тіла.</li>
-                    </ul>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Читати конспект Ч.1</a>
+                    <p>Статика, кінематика та динаміка матеріальної точки і абсолютно твердого тіла. Системи сил та умови рівноваги.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
                 </div>
-
-                <!-- ЧАСТИНА 2 -->
                 <div class="card">
                     <h3>Частина 2: Опір матеріалів</h3>
-                    <ul class="lesson-list">
-                        <li><strong>Тема 6:</strong> Метод перерізів, внутрішні сили та напруження.</li>
-                        <li><strong>Тема 7:</strong> Деформація осьового розтягу та стиску.</li>
-                        <li><strong>Тема 8:</strong> Деформація зсуву та кручення бруса.</li>
-                        <li><strong>Тема 9:</strong> Прямий чистий та поперечний згин брусів.</li>
-                        <li><strong>Тема 10:</strong> Стійкість стиснутих стержнів. Формула Ейлера.</li>
-                    </ul>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Читати конспект Ч.2</a>
+                    <p>Розрахунки елементів конструкцій на міцність, жорсткість та стійкість під дією статичних і динамічних навантажень.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
                 </div>
-
-                <!-- ЧАСТИНА 3 -->
                 <div class="card">
                     <h3>Частина 3: Деталі машин</h3>
-                    <ul class="lesson-list">
-                        <li><strong>Тема 11:</strong> Критерії працездатності механізмів.</li>
-                        <li><strong>Тема 12:</strong> Механічні з'єднання: зварні, різьбові, шпонкові.</li>
-                        <li><strong>Тема 13:</strong> Зубчасті та черв'ячні передачі.</li>
-                        <li><strong>Тема 14:</strong> Ремінні та ланцюгові передачі.</li>
-                        <li><strong>Теma 15:</strong> Вали, осі та підшипники кочення.</li>
-                    </ul>
-                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Читати конспект Ч.3</a>
+                    <p>Основи розрахунку та проектування з'єднань, деталей і вузлів механізмів загального призначення.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
                 </div>
             </div>
         </div>
