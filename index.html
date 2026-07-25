@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Суворий захист, який забороняє браузеру перекладати та ламати код -->
+    <meta name="google" content="notranslate">
+    <title>Технічна механіка — Навчальний вебсайт</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Навігація */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: #93c5fd;
+        }
+
+        /* Контент */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .page {
+            display: none;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin: 1.5rem 0 1rem;
+        }
+
+        /* Картки лекцій */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: var(--light);
+            border-left: 5px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 0.7rem 1.2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        /* Адаптивність */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">Технічна механіка</div>
+            <nav>
+                <ul>
+                    <li><a onclick="showPage('home')" id="nav-home" class="active">Головна</a></li>
+                    <li><a onclick="showPage('programs')" id="nav-programs">Робочі програми</a></li>
+                    <li><a onclick="showPage('lectures')" id="nav-lectures">Лекції</a></li>
+                    <li><a onclick="showPage('practice')" id="nav-practice">Практичні</a></li>
+                    <li><a onclick="showPage('labs')" id="nav-labs">Лабораторні</a></li>
+                    <li><a onclick="showPage('control')" id="nav-control">Контроль</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- ГОЛОВНА -->
+        <div id="home" class="page active">
+            <h1>Про дисципліну «Технічна механіка»</h1>
+            <p>Вітаємо на навчальному порталі дисципліни! Технічна механіка є базовою інженерною наукою, що вивчає закони руху і рівноваги матеріальних тіл, а також деформації елементів конструкцій під дією зовнішніх сил.</p>
+            <h2>Основні розділи курсу:</h2>
+            <ul>
+                <li>Теоретична механіка (Статика, Кінематика, Динаміка)</li>
+                <li>Опір матеріалів (Опір деформаціям та руйнуванню)</li>
+                <li>Деталі машин (Розрахунок та проектування механізмів)</li>
+            </ul>
+        </div>
+
+        <!-- РОБОЧІ ПРОГРАМИ -->
+        <div id="programs" class="page">
+            <h1>Робочі програми та силабуси</h1>
+            <p>У цьому розділі ви знайдете нормативні документи, календарно-тематичні плани та критерії оцінювання з дисципліни.</p>
+        </div>
+
+        <!-- ЛЕКЦІЇ -->
+        <div id="lectures" class="page">
+            <h1>Конспекти лекцій</h1>
+            <p>Матеріали лекцій розподілено на три логічні частини відповідно до структури дисципліни. Натисніть кнопку, щоб переглянути конспект:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Частина 1: Теоретична механіка</h3>
+                    <p>Статика, кінематика та динаміка матеріальної точки і абсолютно твердого тіла. Системи сил та умови рівноваги.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити лекцію</a>
+                </div>
+                <div class="card">
+                    <h3>Частина 2: Опір матеріалів</h3>
+                    <p>Розрахунки елементів конструкцій на міцність, жорсткість та стійкість під дією статичних і динамічних навантажень.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити лекцію</a>
+                </div>
+                <div class="card">
+                    <h3>Частина 3: Деталі машин</h3>
+                    <p>Основи розрахунку та проектування з'єднань, деталей і вузлів механізмів загального призначення.</p>
+                    <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити лекцію</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ПРАКТИЧНІ -->
+        <div id="practice" class="page">
+            <h1>Практичні заняття</h1>
+            <p>Тут будуть розміщені задачі для розв'язання під час практичних занять та домашні завдання.</p>
+        </div>
+
+        <!-- ЛАБОРАТОРНІ -->
+        <div id="labs" class="page">
+            <h1>Лабораторні роботи</h1>
+            <p>Інструкції до лабораторного практикуму, бланки звітів та віртуальні симулятори експериментів.</p>
+        </div>
+
+        <!-- КОНТРОЛЬ -->
+        <div id="control" class="page">
+            <h1>Контроль знань</h1>
+            <p>Питання до модульних контрольних робіт, екзаменаційні білети, тести та теми рефератів.</p>
+        </div>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('nav-' + pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
