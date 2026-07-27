@@ -1,1 +1,339 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технічна механіка - Навчальний портал</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --card-border: #e2e8f0;
+            --accent-color: #004085;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #e9ecef;
+            color: #6c757d;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Технічна механіка</div>
+            <nav>
+                <ul>
+                    <li><a class="nav-link active" data-target="home">Головна</a></li>
+                    <li><a class="nav-link" data-target="syllabus">Syllabus</a></li>
+                    <li><a class="nav-link" data-target="programs">Робочі програми</a></li>
+                    <li><a class="nav-link" data-target="lectures">Лекції</a></li>
+                    <li><a class="nav-link" data-target="presentations">Презентації</a></li>
+                    <li><a class="nav-link" data-target="practical">Практичні</a></li>
+                    <li><a class="nav-link" data-target="labs">Лабораторні</a></li>
+                    <li><a class="nav-link" data-target="control">Контроль</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Головна -->
+        <div id="home" class="section active">
+            <h1>Про дисципліну «Технічна механіка»</h1>
+            <p>Вітаємо на навчальному порталі дисципліни! Технічна механіка є базовою інженерною наукою, що вивчає закони руху і рівноваги матеріальних тіл, а також деформації елементів конструкцій під дією зовнішніх сил.</p>
+            
+            <h2>Основні розділи курсу:</h2>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Теоретична механіка (Статика, Кінематика, Динаміка)</li>
+                <li>Опір матеріалів (Опір деформаціям та руйнуванню)</li>
+                <li>Деталі машин (Розрахунок та проектування механізмів)</li>
+            </ul>
+        </div>
+
+        <!-- Силабус -->
+        <div id="syllabus" class="section">
+            <h1>Силабус дисципліни (Syllabus)</h1>
+            <p>Силабус містить основну інформацію про курс, мету вивчення, очікувані результати навчання та правила оцінювання.</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Загальний Силабус курсу</h3>
+                    <p>Офіційний документ із описом теми, політики курсу, розподілу балів та вимог до студентів.</p>
+                    <a href="ПОСИЛАННЯ_НА_СИЛАБУС" target="_blank" rel="noopener noreferrer" class="btn">📄 Переглянути Силабус (PDF)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Робочі програми -->
+        <div id="programs" class="section">
+            <h1>Робочі програми та силабуси</h1>
+            <p>У цьому розділі ви знайдете нормативні документи, календарно-тематичні плани та критерії оцінювання з дисципліни.</p>
+        </div>
+
+        <!-- Конспекти лекцій -->
+        <div id="lectures" class="section">
+            <h1>Конспекти лекцій</h1>
+            <p>Матеріали лекцій розподілено на три логічні частини відповідно до структури дисципліни:</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Частина 1: Теоретична механіка</h3>
+                    <p>Статика, кінематика та динаміка матеріальної точки і абсолютно твердого тіла. Системи сил та умови рівноваги.</p>
+                    <a href="https://drive.google.com/file/d/1Fb1m9Cnzu5ipLKpjHmypZ1lPhypMp6eS/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
+                </div>
+                <div class="card">
+                    <h3>Частина 2: Опір матеріалів</h3>
+                    <p>Розрахунки елементів конструкцій на міцність, жорсткість та стійкість під дією статичних і динамічних навантажень.</p>
+                    <a href="https://drive.google.com/file/d/1zntACt8oKpzf9lG_RtDTcOBmBRioZsPd/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
+                </div>
+                <div class="card">
+                    <h3>Частина 3: Деталі машин</h3>
+                    <p>Основи розрахунку та проектування з'єднань, деталей і вузлів механізмів загального призначення.</p>
+                    <a href="https://drive.google.com/file/d/1EPb-MZueIP0HBXI6XnH1tx3noUbV_mcH/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn">📌 Відкрити на Google Диску</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Презентації -->
+        <div id="presentations" class="section">
+            <h1>Мультимедійні презентації</h1>
+            <p>Ілюстративні та графічні матеріали до лекційного курсу дисципліни:</p>
+            
+            <h2 style="margin-top: 1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem;">Теоретична механіка</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>1. Статика</h3>
+                    <p>Схеми, вектори сил, умови рівноваги та ілюстрації до розділу «Статика».</p>
+                    <a href="https://docs.google.com/presentation/d/1hR2reRsCU9LsUlwXx8uvT2I6PvbfLZKf/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити Статику</a>
+                </div>
+                <div class="card">
+                    <h3>2. Кінематика</h3>
+                    <p>Траєкторії, швидкості, прискорення та види руху матеріальної точки і тіла.</p>
+                    <a href="https://docs.google.com/presentation/d/1fcPDLMuId4cmkexYXW10xxeqxiGLJ1Cu/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити Кінематику</a>
+                </div>
+                <div class="card">
+                    <h3>3. Динаміка</h3>
+                    <p>Закони динаміки, робота, потужність, енергія та сили інерції.</p>
+                    <a href="https://docs.google.com/presentation/d/1pj21xC2gO0Ret9uvN_xieb2VTj6onTqf/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити Динаміку</a>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem;">Опір матеріалів та Деталі машин</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Презентації: Опір матеріалів</h3>
+                    <p>Наочні матеріали щодо видів деформацій, розрахункових схем та побудови епюр.</p>
+                    <a href="https://docs.google.com/presentation/d/1sVFOes3q2v-UFV0CPDGlGawP7WBDYEcT/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити презентацію</a>
+                </div>
+                <div class="card">
+                    <h3>Презентації: Деталі машин</h3>
+                    <p>Креслення, 3D-моделі з'єднань, передач та вузлів деталей машин.</p>
+                    <a href="ПОСИЛАННЯ_НА_ПРЕЗЕНТАЦІЇ_ДМ" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити презентації</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Практичні -->
+        <div id="practical" class="section">
+            <h1>Практичні заняття</h1>
+            <p>Тут будуть розміщені задачі для розв'язання під час практичних занять та домашні завдання.</p>
+        </div>
+
+        <!-- Лабораторні -->
+        <div id="labs" class="section">
+            <h1>Лабораторні роботи</h1>
+            <p>Інструкції до лабораторного практикуму, бланки звітів та віртуальні симулятори експериментів.</p>
+        </div>
+
+        <!-- Контроль знань -->
+        <div id="control" class="section">
+            <h1>Контроль знань</h1>
+            <p>Питання до модульних контрольних робіт, екзаменаційні білети, тести та теми рефератів.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; Навчальний портал з дисципліни «Технічна механіка»</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const targetId = link.getAttribute('data-target');
+
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    link.classList.add('active');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
