@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Суворий захист, який примусово забороняє браузеру перекладати та ламату код -->
     <meta name="google" content="notranslate">
     <title>Технічна механіка — Навчальний вебсайт</title>
     <style>
@@ -31,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Навігація */
         header {
             background-color: var(--primary);
             color: var(--white);
@@ -74,7 +72,6 @@
             color: #93c5fd;
         }
 
-        /* Контент */
         main {
             max-width: 1200px;
             margin: 2rem auto;
@@ -105,7 +102,6 @@
             margin: 1.5rem 0 1rem;
         }
 
-        /* Картки / Сітка */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -123,13 +119,11 @@
             justify-content: space-between;
         }
 
-        /* Кольори вертикальних ліній для різних сторінок */
         .card.card-presentation { border-left-color: var(--green); }
         .card.card-practice { border-left-color: var(--amber); }
         .card.card-labs { border-left-color: var(--purple); }
         .card.card-control { border-left-color: #ef4444; }
 
-        /* Списки презентацій */
         .presentation-list {
             list-style: none;
             margin: 1rem 0;
@@ -166,7 +160,6 @@
             font-size: 0.9rem;
         }
 
-        /* Кнопки */
         .btn {
             display: inline-block;
             background: var(--primary);
@@ -186,7 +179,6 @@
             background: var(--secondary);
         }
 
-        /* Кольори кнопок за темами */
         .btn-practice { background: var(--amber); }
         .btn-practice:hover { background: #d97706; }
         .btn-labs { background: var(--purple); }
@@ -194,7 +186,6 @@
         .btn-control { background: #ef4444; }
         .btn-control:hover { background: #dc2626; }
 
-        /* Адаптивність */
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -231,7 +222,7 @@
         <!-- ГОЛОВНА -->
         <div id="home" class="page active">
             <h1>Про дисципліну «Технічна механіка»</h1>
-            <p>Вітаємо на навчальному порталі дисципліни! ...</p>
+            <p>Вітаємо на навчальному порталі дисципліни! Технічна механіка є базовою інженерною наукою, що вивчає закони руху і рівноваги матеріальних тіл, а також деформації елементів конструкцій під дією зовнішніх сил.</p>
             <h2>Основні розділи курсу:</h2>
             <ul>
                 <li>Теоретична механіка (Статика, Кінематика, Динаміка)</li>
@@ -275,7 +266,7 @@
             <p>Тут зібрані наочні лекційні презентації для кращого засвоєння теоретичного матеріалу:</p>
             <div class="grid">
                 <div class="card card-presentation">
-                    <h3>Частина 1: Теоретична механіка</h3>
+                    <h3>Частина 1: ...</h3>
                     <div class="presentation-list"><p class="no-materials">Матеріали готуються...</p></div>
                 </div>
                 <div class="card card-presentation">
@@ -286,4 +277,9 @@
                     <h3>Частина 3: Деталі машин</h3>
                     <div class="presentation-list">
                         <div class="presentation-item">
-                            <!-- Захищене посилання, яке перекладач Chrome більше не зможе зламати -->
+                            <a href="https://google.com" target="_blank" rel="noopener noreferrer" class="presentation-link">🖥️ Лекція 1: Вступ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
