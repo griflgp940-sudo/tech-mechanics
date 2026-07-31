@@ -450,32 +450,33 @@
                     <h3>Муфти</h3>
                     <p>Призначення муфт, класифікація на глухі, жорсткі компенсуючі, пружні, зчіпні та самокеровані запобіжні муфти, основи вибору стандартних муфт та їх розрахунок на міцність.</p>
                     <a href="https://docs.google.com/presentation/d/1JlJlOoUpthVTrNY1JQLiCCfUni9tjod3/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">📊 Відкрити презентацію</a>
-                </div>
-
-          <div id="practice" class="page">
-            <h1>Практичні заняття</h1>
-            <p>Збірники задач, інструкції до виконання та приклади розв'язання типових завдань курсу:</p>
-            <div class="cards-grid">
-                <!-- Картка 1 -->
+               </div>
+            </div>
+        </div>
+          
+            <!-- Практичні -->
+	<div id="practical" class="section">
+	<h1>Практичні заняття</h1>   
+	<p>Збірники задач, інструкції до виконання та приклади розв'язання типових завдань курсу:</p>
+         <h2 style="margin-top: 1rem; border-bottom: 1px solid #ccc; padding-bottom: 0.3rem;">Теоретична механіка</h2>  
+	 <div class="cards-grid">
                 <div class="card">
                     <h3>Теоретична механіка</h3>
                     <p>Задачі на рівновагу систем сил, визначення реакцій опор, кінематичний та динамічний аналіз рухів матеріальних тіл конструкцій.</p>
                     <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-practice">🔸 Відкрити завдання</a>
                 </div>
-                <!-- Картка 2 -->
                 <div class="card">
                     <h3>Опір матеріалів</h3>
                     <p>Практичні розрахунки на розтяг, стиск, зсув, кручення та згин. Побудова епюр внутрішніх зусиль у брусах.</p>
                     <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-practice">🔸 Відкрити завдання</a>
                 </div>
-                <!-- Картка 3 -->
                 <div class="card">
                     <h3>Деталі машин</h3>
                     <p>Проектування та розрахунок з'єднань деталей механізмів, визначення геометричних та міцнісних параметрів передач.</p>
                     <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-practice">🔸 Відкрити завдання</a>
                 </div>
             </div>
-        </div>
+        </div>    
 
         <!-- Лабораторні -->
         <div id="labs" class="section">
@@ -494,26 +495,26 @@
         <p>&copy; Навчальний портал з дисципліни «Технічна механіка»</p>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.section');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    const targetId = link.getAttribute('data-target');
-
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    sections.forEach(s => s.classList.remove('active'));
-
-                    link.classList.add('active');
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.classList.add('active');
-                    }
+      <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                
+                const targetId = this.getAttribute('data-target');
+                
+                document.querySelectorAll('.page, .section').forEach(block => {
+                    block.style.display = 'none';
+                    block.classList.remove('active');
                 });
+                
+                const activeBlock = document.getElementById(targetId);
+                if (activeBlock) {
+                    activeBlock.style.display = 'block';
+                    activeBlock.classList.add('active');
+                }
             });
         });
     </script>
