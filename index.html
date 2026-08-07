@@ -188,7 +188,7 @@
                     <li><a class="nav-link" data-target="presentations">Презентації</a></li>
                     <li><a class="nav-link" data-target="practical">Практичні</a></li>
                     <li><a class="nav-link" data-target="labs">Лабораторні</a></li>
-                    <li><a class="nav-link" data-target="control">Контроль</a></li>
+                    <li><a class="nav-link" data-target="testing">Контроль</a></li>
                 </ul>
             </nav>
         </div>
@@ -742,14 +742,58 @@
 <!-- Кнопка повернення до вибору дисциплін -->
     <a href="#" class="nav-link btn" data-target="labs" style="background-color: #6b7280; margin-top: 2rem; display: inline-block;">⬅️ Повернутися до вибору дисциплін</a>
 </div>
-<!-- Контроль знань -->
-        <div id="control" class="section">
-            <h1>Контроль знань</h1>
-            <p>Питання до модульних контрольних робіт, екзаменаційні білети, тести та теми рефератів.</p>
-        </div>
-    </main>
 
-    <footer>
+<!-- Контроль знань -->
+        <div id="testing" class="section">
+            <h1>Контроль знань</h1>
+            <p>Тести з питань теорії та до лабораторних робіт.</p>
+        <div class="cards-grid">
+ <!-- Картка 1: Теоретична механіка -->
+            <div class="card">
+                <h3>Теоретична механіка</h3>
+                <p>Тести з курсу теоретичної механіки.</p>
+                <a href="#" class="nav-link btn btn-practice" data-target="testing-tm" style="width: 100%; box-sizing: border-box; text-align: center; display: inline-block; margin-top: 0.5rem;">🔸 Відкрити завдання</a>
+            </div>
+
+            <!-- Картка 2: Опір матеріалів -->
+            <div class="card">
+                <h3>Опір матеріалів</h3>
+                <p>Тести з курсу опору матеріалів.</p>
+                <a href="#" class="nav-link btn btn-practice" data-target="testing-om" style="width: 100%; box-sizing: border-box; text-align: center; display: inline-block; margin-top: 0.5rem;">🔸 Відкрити завдання</a>
+            </div>
+
+            <!-- Картка 3: Деталі машин -->
+            <div class="card">
+                <h3>Деталі машин</h3>
+                <p>Тести з курсу деталей машин.</p>
+                <a href="#" class="nav-link btn btn-practice" data-target="testing-dm" style="width: 100%; box-sizing: border-box; text-align: center; display: inline-block; margin-top: 0.5rem;">🔸 Відкрити завдання</a>
+            </div>
+
+        </div> <!-- Закриваємо cards-grid -->
+    </div> <!-- Закриваємо section -->
+
+ <!-- Внутрішня сторінка: Тести з теоретичної механіки -->
+    <div id="testing-tm" class="section">
+    <h1>Теоретична механіка — Тести</h1>
+    <p>Тести з питань теорії і лабораторних робіт:</p>
+    <div class="cards-grid">
+<!-- Тест №1 -->
+    <div class="card">
+    <h3>1 Тест з питань тем 1.1 - 1.3 теоретичної механіки</h3>
+    <a href="https://forms.cloud.microsoft/e/406XSWPQN4" target="_blank" rel="noopener noreferrer" class="btn btn-practice" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box; text-align: center; background-color: #7c3aed;">📝 Пройти тест групі ПМ 252</a>
+</div>
+
+<!-- Тест №2 -->
+    <div class="card">
+    <h3>2 Тест з питань Статики</h3>
+    <a href="https://forms.cloud.microsoft/e/VKTKcr3bKg" target="_blank" rel="noopener noreferrer" class="btn btn-practice" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box; text-align: center; background-color: #7c3aed;">📝Пройти тест групі ПМ 252</a>
+</div>
+
+
+
+</div>  
+ </main>
+<footer>
         <p>&copy; Навчальний портал з дисципліни «Технічна механіка».
  Автор Фрімерштейн Григорій, викладач - методист вищої категорії Хмельницького політехнічного фахового коледжу Національного університету "Львівська політехніка".</p>
     </footer>
